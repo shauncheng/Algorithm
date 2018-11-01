@@ -1,9 +1,9 @@
 #include"customer.h"
 #include<stdlib.h>
-Customer::Customer()
+Customer::Customer(int currentTime)
 {
     Durations=rand()%60;
-    ArrivalTime=rand()%20;
+    ArrivalTime=rand()%20+currentTime;
 }
 int Customer::GetArrvalTime(){
     return ArrivalTime;

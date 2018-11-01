@@ -5,7 +5,7 @@ class Customer
   public:
     Customer(const Customer &);
     virtual ~Customer();
-    Customer();
+    Customer(int);
     int GetDuration();
     int GetArrvalTime();
 

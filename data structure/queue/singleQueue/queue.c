@@ -55,6 +55,7 @@ Status GetHead(LinkQueue *Q, ElemType *e)
 }
 Status EnQueue(LinkQueue*Q,ElemType e)
 {
+    
     QueuePtr p=(QueuePtr)malloc(sizeof(QNode));
     p->next=NULL;
     if(!p) return OVERFLOW;
@@ -67,6 +68,7 @@ Status EnQueue(LinkQueue*Q,ElemType e)
 }
 Status DeQUeue(LinkQueue*Q,ElemType*e)
 {
+    
     if(QueueEmpty==OK) return ERROR;
     *e=Q->front->data;
     QueuePtr p=Q->front->next;
