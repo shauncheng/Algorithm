@@ -27,6 +27,7 @@ int MatchString(HString *S, HString *P, int pos)
     if (pos < 1)
         return ERROR;
     int *next = (int *)malloc(sizeof(P->length));
+    int *t=next;
     FindPrefix(P, next);
     int i = pos - 1, j = 0;
     while (i < S->length)
@@ -35,6 +36,7 @@ int MatchString(HString *S, HString *P, int pos)
         {
             if (j == P->length - 1)
             {
+                next=t;
                 free(next);
                 next = NULL;
                 return i - j;
@@ -51,6 +53,7 @@ int MatchString(HString *S, HString *P, int pos)
             j = *(next + j - 1);
         }
     }
+    next=t;
     free(next);
     next = NULL;
     return -1;
